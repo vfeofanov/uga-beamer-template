@@ -1,0 +1,87 @@
+\documentclass{beamer}
+\usetheme{Copenhagen}
+\beamertemplatenavigationsymbolsempty
+\newcommand\argum{conference} % defines the title style
+\usepackage{uga-beamer-template}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{hyperref} % hyper references
+\usefonttheme[onlymath]{serif} % article font style
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+
+
+% Title
+\title{UGA Beamer Conference Template}
+\subtitle{It's like a subtitle, but it's not!}
+\author[V. Feofanov]{Vasilii Feofanov}
+\institute{ Universit\'e Grenoble Alpes, Grenoble INP,\\ LIG, CNRS, Grenoble 38000, France\\ \href{mailto:vasilii.feofanov@univ-grenoble-alpes.fr}{vasilii.feofanov@univ-grenoble-alpes.fr}}
+\date{July 7, 2019}
+
+
+\begin{document}
+{
+\setbeamertemplate{navigation symbols}{}{}
+\setbeamertemplate{footline}{} 
+\begin{frame}
+  \titlepage
+\end{frame}
+}
+\addtocounter{framenumber}{-1}
+
+
+\section{Items}
+\begin{frame}{Enumerate}
+    \begin{enumerate}
+        \item Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua \cite{Feofanov:2019}. 
+        \begin{itemize}
+            \item Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            \begin{itemize}
+            \item Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            \end{itemize}
+        \end{itemize}
+        \item Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Itemize}
+    \begin{itemize}
+        \item Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua \cite{Feofanov:2019}. 
+        \begin{itemize}
+            \item Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            \begin{itemize}
+            \item Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            \end{itemize}
+        \end{itemize}
+        \item Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Mean value theorem}
+\begin{thm}
+Let  $f\,:\,[a,b]\to \mathbb{R}$ be a continuous function on $[a,b]$, and differentiable on $(a,b)$ with $a<b$. Then there exists $c\in (a,b)$ such that
+\[
+f'(c) = \frac{f(b)-f(a)}{b-a}.
+\]
+\end{thm}
+\end{frame}
+
+
+\section{Code}
+\begin{frame}{Code}
+    Source files can be downloaded from the github repository:
+    \begin{center}
+        \url{https://github.com/vfeofanov/uga-beamer-template}
+    \end{center}
+\end{frame}
+
+
+\begin{frame}{References}
+\bibliographystyle{apalike}
+\bibliography{bibfile}
+\end{frame}
+
+\end{document}

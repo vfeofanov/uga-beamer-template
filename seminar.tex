@@ -1,0 +1,78 @@
+\documentclass{beamer}
+\usetheme{Copenhagen}
+\beamertemplatenavigationsymbolsempty
+\newcommand\argum{seminar} % defines the title style
+\usepackage{uga-beamer-template}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{hyperref} % hyper references
+\usefonttheme[onlymath]{serif} % article font style
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+
+
+% Title
+\title{UGA Beamer Seminar Template}
+\subtitle{Session 1}
+\author[Vasilii Feofanov]{Vasilii Feofanov}
+\institute{ Universit\'e Grenoble Alpes\\ \href{mailto:vasilii.feofanov@univ-grenoble-alpes.fr}{vasilii.feofanov@univ-grenoble-alpes.fr}}
+\date{July 7, 2019}
+
+
+\begin{document}
+{
+\setbeamertemplate{navigation symbols}{}{}
+\setbeamertemplate{footline}{} 
+\begin{frame}
+  \titlepage
+\end{frame}
+}
+\addtocounter{framenumber}{-1}
+
+
+\AtBeginSection[]
+{
+ \begin{frame}{Outline}
+ \tableofcontents[currentsection]
+ \end{frame}
+}
+
+\section{Items}
+\begin{frame}{Enumerate}
+    \begin{enumerate}
+        \item Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        \begin{itemize}
+            \item Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            \begin{itemize}
+            \item Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            \end{itemize}
+        \end{itemize}
+        \item Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Itemize}
+    \begin{itemize}
+        \item Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        \begin{itemize}
+            \item Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            \begin{itemize}
+            \item Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            \end{itemize}
+        \end{itemize}
+        \item Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    \end{itemize}
+\end{frame}
+
+\section{Code}
+\begin{frame}{Code}
+    Source files can be downloaded from the github repository:
+    \begin{center}
+        \url{https://github.com/vfeofanov/uga-beamer-template}
+    \end{center}
+\end{frame}
+
+\end{document}

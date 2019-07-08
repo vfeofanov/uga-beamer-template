@@ -1,0 +1,244 @@
+% ==========================================================================
+% Titlepage structure
+% ==========================================================================
+
+\newcommand\cond{conference} % for comparison
+\def\maketitle{\ifbeamer@inframe\titlepage\else\frame[plain]{\titlepage}\fi}
+\def\titlepage{\usebeamertemplate{title page}}
+\ifx\argum\cond
+    \setbeamertemplate{title page}
+    {
+    	\begin{minipage}[b][\paperheight]{\textwidth}
+    	\vspace*{5mm}
+    	\includegraphics[height=12.5mm]{logos/logo-uga-new-couleurs} \hspace{2.7mm}
+    	\includegraphics[height=12.5mm]{logos/grenoble-inp-logo.png} \hspace{3.5mm}
+    	\includegraphics[height=14mm]{logos/logo-lig.png} \hspace{3.5mm}
+    	\includegraphics[height=12.5mm]{logos/cnrs-logo.png}
+    	\par
+    	\vspace*{5mm}
+    	\ifx\insertsubtitle\@empty%
+    	\else%
+       \begin{beamercolorbox}[sep=8pt,colsep=-6bp,rounded=true]{title}
+            \usebeamerfont{title}\inserttitle\par
+        \end{beamercolorbox}%
+        \vspace*{2.5mm}
+        \fi
+    	\ifx\insertauthor\@empty%
+    	\else%
+    		{\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\par}%
+    	\fi%
+    	\ifx\insertinstitut\@empty%
+    	\else%
+    		\vspace*{0.3cm}
+    		{\usebeamerfont{institute}\usebeamercolor[fg]{institute}\insertinstitute\par}%
+    	\fi% 
+    	\vfill
+    	\ifx\insertsubtitle\@empty%
+    	\else%
+    		{\usebeamerfont{subtitle}\insertsubtitle\par}%
+    		\vspace*{0.5mm}
+    	\fi%
+    	\ifx\insertdate\@empty%
+    	\else%
+    		{\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate\par}%
+    	\fi% 
+    	\vspace*{8mm}
+    	\end{minipage}
+    }
+\else
+    \setbeamertemplate{title page}
+    {
+    	\begin{minipage}[b][\paperheight]{\textwidth}
+    	\vspace*{5mm}
+    	\includegraphics[height=12.5mm]{logos/logo-uga-new-couleurs} \hspace{3.5mm}
+    	\includegraphics[height=14mm]{logos/logo-lig.png}
+    	\par
+    	\vspace*{5mm}
+    	\ifx\insertsubtitle\@empty%
+    	\else%
+       \begin{beamercolorbox}[sep=8pt,colsep=-6bp,rounded=true]{title}
+            \usebeamerfont{title}\inserttitle\par
+        \end{beamercolorbox}%
+        \vspace*{2.5mm}
+    	\fi%
+    	\ifx\insertsubtitle\@empty%
+    	\else%
+    % 		{\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+    		{\usebeamerfont{subtitle}\insertsubtitle\par}%
+    		\vspace*{1.5mm}
+    	\fi%
+    	\ifx\insertdate\@empty%
+    	\else%
+    		{\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate\par}%
+    	\fi% 
+    	
+    	\vfill
+    	
+    	\ifx\insertauthor\@empty%
+    	\else%
+    		{\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\par}%
+    	\fi%
+    	\ifx\insertinstitut\@empty%
+    	\else%
+    		\vspace*{1mm}
+    		{\usebeamerfont{institute}\usebeamercolor[fg]{institute}\insertinstitute\par}%
+    	\fi% 
+    	\vspace*{8mm}
+    	\end{minipage}
+    }
+\fi
+
+
+
+
+\setbeamerfont{date}{size=\footnotesize}
+\setbeamerfont{subtitle}{size=\footnotesize}
+
+% ==========================================================================
+
+
+
+% ==========================================================================
+% Frame
+% ==========================================================================
+
+% Remove the default headline with sections
+\setbeamertemplate{headline}{}
+
+% place a white UGA logo in a frametitle
+\usepackage{textpos}
+\addtobeamertemplate{frametitle}{}{%
+\begin{textblock*}{50mm}(.92\textwidth,-0.9cm)
+\includegraphics[height=1cm]{logos/logo-uga-new-blanc-pied}
+\end{textblock*}}
+
+% add navigation system
+\addtobeamertemplate{navigation symbols}{}{%
+    \usebeamerfont{footline}%
+    \usebeamercolor[fg]{black}%
+    \hspace{1em}%
+    \insertframenumber/\inserttotalframenumber
+}
+
+
+% proof without ending square
+\newenvironment{innerproof}
+ {\renewcommand{\qedsymbol}{}\proof}
+ {\endproof}
+
+\setbeamerfont{section in toc}{size=\large}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+
+% ==========================================================================
+
+
+% ==========================================================================
+% Coloring
+% ==========================================================================
+
+% Red and grey colors of the UGA logo
+\definecolor{ugared}{HTML}{EB292B}
+\definecolor{ugagrey}{HTML}{4B585E}
+
+% Define palette color: main color will be grey, however most of elements will be red colored manually below
+\usecolortheme[named=ugagrey]{structure}
+
+\setbeamercolor{frametitle}{fg=white!50, bg=ugared}
+\setbeamercolor{title}{fg=white,bg=ugared}
+\setbeamercolor{local structure}{fg=ugared}
+\setbeamercolor{section in toc}{fg=black,bg=white}
+\setbeamercolor{footline}{fg=ugared!50, bg=white}
+\setbeamercolor{item projected}{fg=white,bg=ugared}
+\setbeamercolor{author in head/foot}{fg=white, bg=ugagrey}
+\setbeamercolor{title in head/foot}{fg=white, bg=ugared}
+\setbeamercolor{caption name}{fg=ugagrey}
+\setbeamercolor{block title}{bg=ugagrey!95}
+\setbeamercolor{block body}{bg=ugagrey!5}
+\setbeamercolor*{block body example}{bg=ugagrey!20}
+
+% ==========================================================================
+
+
+
+% ==========================================================================
+% Itemize and Enumerate
+% ==========================================================================
+
+% Bullets with shadows
+\usepackage{tikz}
+\usetikzlibrary{shadows}
+\newcommand*{\shadowcirclered}{\tikz \draw [baseline, fill=ugared,draw=ugared,drop shadow={shadow yshift=-1pt, shadow xshift=1pt, color=black!50}] circle (2pt);}
+\newcommand*{\shadowcirclegrey}{\tikz \draw [baseline, fill=ugagrey,draw=ugagrey,drop shadow={shadow yshift=-1pt, shadow xshift=1pt, color=black!50}] circle (2pt);}
+\newcommand*{\shadowsquarered}{\tikz \draw [baseline, fill=ugared,draw=ugared, drop shadow={shadow yshift=-1pt, shadow xshift=1pt, color=black!50}] rectangle (4pt,4pt);}
+\newcommand*{\shadowsquaregrey}{\tikz \draw [baseline, fill=ugagrey,draw=ugagrey, drop shadow={shadow yshift=-1pt, shadow xshift=1pt, color=black!50}] rectangle (4pt,4pt);}
+
+\usepackage{xcolor}
+\newlength{\tmpShadow}
+\newcommand{\ourShadow}[2]{%
+    \settowidth{\tmpShadow}{#1}
+    \addtolength{\tmpShadow}{.1em}
+    \raisebox{-0.25ex}{\textcolor{black!50}{#1}}%
+    \kern-\tmpShadow%
+    \textcolor{#2}{#1}%
+}
+\newcommand*{\shadowtrianglered}{\ourShadow{$\blacktriangleright$}{ugared!75}}
+
+\setbeamertemplate{itemize item}{\shadowsquarered}
+\setbeamertemplate{itemize subitem}{\shadowcirclegrey}
+\setbeamertemplate{itemize subsubitem}{\shadowtrianglered}
+\setbeamertemplate{enumerate items}[square]
+
+% ==========================================================================
+
+
+
+% ==========================================================================
+% Footline
+% ==========================================================================
+
+% \makeatletter
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.7\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\inserttitle
+  \end{beamercolorbox}%
+%   \begin{beamercolorbox}[wd=.7\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+%     \usebeamerfont{title in head/foot}\inserttitle
+%   \end{beamercolorbox}%
+}%
+  \vskip0pt%
+}
+% \makeatother
+
+% ==========================================================================
+
+
+% ==========================================================================
+% Outline
+% ==========================================================================
+
+\newcommand*\bicolor[1]{\tikz[baseline=(char.base)]{
+        \fill[ugared!80] (-.3,-.2) rectangle (0,.3);
+        \fill[black!30] (0,-.2) rectangle (.3,.3);
+        \node[color=white] (char) {#1};}}
+        
+\newcommand*\onereccolor[1]{\tikz[baseline=(char.base)]{
+        % \fill[ugared!90] (-1.1,-.2) rectangle (.3,.3);
+        \fill[ugagrey!90] (-1.1,-.2) rectangle (.3,.3);
+        \node[color=white] (char) {#1};}} 
+
+\setbeamertemplate{section in toc}{%
+    % \usebeamercolor[fg]{enumerate item}%
+    \makebox[1em][r]{\bfseries\Large\onereccolor{\inserttocsectionnumber}}%
+    \parbox[t]{\dimexpr\linewidth-2em}{\ \inserttocsection}%
+}
+
+% ==========================================================================
+
+
